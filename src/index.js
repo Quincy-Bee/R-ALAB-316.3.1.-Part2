@@ -42,6 +42,10 @@ topMenuEl.classList.add("flex-around");
 // Set the new element's content to the value of the text property of the "link" object.
 // Append the new element to the topMenuEl element.
 
+// Part 3: Creating Sub Menu
+// Select and cache the <nav id="sub-menu"> element
+const subMenuEl = document.getElementById("sub-menu");
+
 menuLinks.forEach(link => {
     const a = document.createElement('a');
     a.href = link.href;
