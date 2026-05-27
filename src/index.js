@@ -93,9 +93,21 @@ const topMenuLinks = topMenuEl.querySelectorAll("a");
 
 // Attach a delegated 'click' event listener to topMenuEl.
 topMenuEl.addEventListener("click", function (event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    if (event.target.tagName !== "A") return;
+  if (event.target.tagName !== "A") return;
 
-    console.log(event.target.textContent);
+  // menu link clicked
+   let clickedLinkObj = menuLinks.find(
+    link => link.text === event.target.textContent
+
+  console.log(event.target.textContent);
+
+  // remove active from all links FIRST
+  topMenuLinks.forEach(link => {
+    link.classList.remove("active");
+  });
+
+  // then add active to clicked link
+  event.target.classList.add("active");
 });
