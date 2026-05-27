@@ -87,3 +87,15 @@ menuLinks.forEach(link => {
   a.textContent = link.text;
   topMenuEl.appendChild(a);
 })
+
+// Select and cache the all of the <a> elements inside of topMenuEl in a variable named topMenuLinks.
+const topMenuLinks = topMenuEl.querySelectorAll("a");
+
+// Attach a delegated 'click' event listener to topMenuEl.
+topMenuEl.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    if (event.target.tagName !== "A") return;
+
+    console.log(event.target.textContent);
+});
