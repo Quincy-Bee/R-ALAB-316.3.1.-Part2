@@ -46,6 +46,9 @@ topMenuEl.classList.add("flex-around");
 // Select and cache the <nav id="sub-menu"> element
 const subMenuEl = document.getElementById("sub-menu");
 
+// Set the height subMenuEl element to be "100%"
+subMenuEl.computedStyleMap.height = "100%"
+
 menuLinks.forEach(link => {
     const a = document.createElement('a');
     a.href = link.href;
