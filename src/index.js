@@ -56,6 +56,9 @@ subMenuEl.style.height = "100%";
 // Add the class of flex-around to the subMenuEl element.
 subMenuEl.classList.add("flex-around");
 
+// Set the CSS position property of subMenuEl to the value of absolute.
+subMenuEl.style.position = "absolute";
+
 menuLinks.forEach(link => {
     const a = document.createElement('a');
     a.href = link.href;
