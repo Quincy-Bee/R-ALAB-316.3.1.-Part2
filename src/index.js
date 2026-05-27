@@ -1,9 +1,31 @@
 // Menu data structure
 var menuLinks = [
-  { text: "about", href: "/about" },
-  { text: "catalog", href: "/catalog" },
-  { text: "orders", href: "/orders" },
-  { text: "account", href: "/account" },
+
+  { text: 'about', href: '/about' },
+
+  {
+    text: 'catalog', href: '#', subLinks: [
+      { text: 'all', href: '/catalog/all' },
+      { text: 'top selling', href: '/catalog/top' },
+      { text: 'search', href: '/catalog/search' },
+    ]
+  },
+
+  {
+    text: 'orders', href: '#', subLinks: [
+      { text: 'new', href: '/orders/new' },
+      { text: 'pending', href: '/orders/pending' },
+      { text: 'history', href: '/orders/history' },
+    ]
+  },
+
+  {
+    text: 'account', href: '#', subLinks: [
+
+      { text: 'profile', href: '/account/profile' },
+      { text: 'sign out', href: '/account/signout' },
+    ]
+  },
 ];
 
 // GETTING STARTED
@@ -60,8 +82,8 @@ subMenuEl.classList.add("flex-around");
 subMenuEl.style.position = "absolute";
 
 menuLinks.forEach(link => {
-    const a = document.createElement('a');
-    a.href = link.href;
-    a.textContent = link.text;
-    topMenuEl.appendChild(a);
+  const a = document.createElement('a');
+  a.href = link.href;
+  a.textContent = link.text;
+  topMenuEl.appendChild(a);
 })
